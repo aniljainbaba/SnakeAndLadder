@@ -7,9 +7,10 @@ public class Position {
 	
 	String positionType; //SNAKE, LADDER and EMPTY
 	
-	Position(int fromCorr, int toCorr){
+	Position(int fromCorr, int toCorr, String positionType){
 		this.fromCorr = fromCorr;
 		this.toCorr = toCorr;
+		this.positionType = positionType;
 	}
 
 	public int getFromCorr() {

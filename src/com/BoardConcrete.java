@@ -6,24 +6,27 @@ public class BoardConcrete implements Board{
 	Position[] boardDimensions = new Position[100];
 	
 	/**
-	 * Create the boards
+	 * Default constructor
 	 */
-	public  void createBoard(int numSnakes, int numLadder) {
+	public BoardConcrete() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void createBoard() {
 		instantiateAllSnakes();
 		instantiateAllLadders();
-	
-		
-	}//end createBoard
+	}
 	
 	/**
 	 * Instantiates all snakes on the board
 	 */
 	private void instantiateAllSnakes(){
-		Position snake1 = new Position(10,5);
-		Position snake2 = new Position(27,10);
-		Position snake3 = new Position(40, 20);
-		Position snake4 = new Position(60, 10);
-		Position snake5 = new Position(90, 30);
+		Position snake1 = new Position(10,5, "SNAKE");
+		Position snake2 = new Position(27,10, "SNAKE");
+		Position snake3 = new Position(40, 20,"SNAKE");
+		Position snake4 = new Position(60, 10, "SNAKE");
+		Position snake5 = new Position(90, 30,"SNAKE");
 		presentSnakes[0] = snake1;
 		presentSnakes[1] = snake2;
 		presentSnakes[2] = snake3;
@@ -50,11 +53,11 @@ public class BoardConcrete implements Board{
 	 * Instantiates all Ladders on the board
 	 */
 	private void instantiateAllLadders(){
-		Position ladder1 = new Position(8, 28);
-		Position ladder2 = new Position(18,38);
-		Position ladder3 = new Position(28, 45);
-		Position ladder4 = new Position(38, 78);
-		Position ladder5 = new Position(50,80);
+		Position ladder1 = new Position(8, 28, "LADDER");
+		Position ladder2 = new Position(18,38, "LADDER");
+		Position ladder3 = new Position(28, 45,"LADDER");
+		Position ladder4 = new Position(38, 78, "LADDER");
+		Position ladder5 = new Position(50,80,"LADDER");
 		
 		presentSnakes[0] = ladder1;
 		presentSnakes[1] = ladder2;
@@ -75,5 +78,7 @@ public class BoardConcrete implements Board{
 		}
 		
 	}//end method nstantiateAllLadders
+
+	
 
 }//end class
