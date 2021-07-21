@@ -1,5 +1,7 @@
 package com;
 
+import util.BoardUtils;
+
 public class Move  implements MoveInterface{
 
 	@Override
@@ -9,21 +11,22 @@ public class Move  implements MoveInterface{
 	}
 
 	@Override
-	public boolean isLandingOnSnake() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isLandingOnLadder() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Position playerNextMove(Position playerCurrentPosition) {
+	public Position playerNextMove(Position[] boardDimensions, Position playerCurrentPosition) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public boolean isLandingOnSnake(Position[] boardDimensions) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isLandingOnLadder(Position[] boardDimensions) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 }//end Move
