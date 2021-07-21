@@ -11,24 +11,12 @@ public class BoardConcrete implements Board{
 	public  void createBoard(int numSnakes, int numLadder) {
 		instantiateAllSnakes();
 		instantiateAllLadders();
-		
-		//place snakes on the board
-		for (int i = 0; i < presentSnakes.length; i++) {
-			
-			Position snake1 = presentSnakes[i];
-			
-			
-		}//end 
-		
-		//place ladder on the board
-		for (int j = 0; j < presentLadder.length; j++) {
-			Position ladder = presentSnakes[j];
-		}//end 
+	
 		
 	}//end createBoard
 	
 	/**
-	 * Instantiates all snakes
+	 * Instantiates all snakes on the board
 	 */
 	private void instantiateAllSnakes(){
 		Position snake1 = new Position(10,5);
@@ -42,11 +30,24 @@ public class BoardConcrete implements Board{
 		presentSnakes[3] = snake4;
 		presentSnakes[4] = snake5;
 		
+		//place snakes on the board
+		for (int i = 0; i < presentSnakes.length; i++) {
+			
+			Position snake = presentSnakes[i];
+			int fromCor = snake.getFromCorr();
+			int toCor = snake.getToCorr();
+			String targetIndexOnBoard = Integer.toString(fromCor) + Integer.toString(toCor) ;
+			int targetIndex = Integer.parseInt(targetIndexOnBoard);
+			
+			boardDimensions[targetIndex] = snake;
+			
+		}//end 
+		
 		
 	}//end method instantiateAllSnakes
 	
 	/**
-	 * Instantiates all Lates
+	 * Instantiates all Ladders on the board
 	 */
 	private void instantiateAllLadders(){
 		Position ladder1 = new Position(8, 28);
@@ -61,6 +62,18 @@ public class BoardConcrete implements Board{
 		presentSnakes[3] = ladder4;
 		presentSnakes[4] = ladder5;
 		
-	}//end instantiateAllLadders
+		//place ladders on the board
+		for (int j = 0; j < presentLadder.length; j++) {
+			Position ladder = presentLadder[j];
+			
+			int fromCor = ladder.getFromCorr();
+			int toCor = ladder.getToCorr();
+			String targetIndexOnBoard = Integer.toString(fromCor) + Integer.toString(toCor) ;
+			int targetIndex = Integer.parseInt(targetIndexOnBoard);
+			
+			boardDimensions[targetIndex] = ladder;
+		}
+		
+	}//end method nstantiateAllLadders
 
 }//end class
