@@ -39,10 +39,13 @@ public class BoardConcrete implements Board{
 			Position snake = presentSnakes[i];
 			int fromCor = snake.getFromCorr();
 			int toCor = snake.getToCorr();
-			String targetIndexOnBoard = Integer.toString(fromCor) + Integer.toString(toCor) ;
-			int targetIndex = Integer.parseInt(targetIndexOnBoard);
-			
-			boardDimensions[targetIndex] = snake;
+			/*
+			 * String targetIndexOnBoard = Integer.toString(fromCor) +
+			 * Integer.toString(toCor) ; int targetIndex =
+			 * Integer.parseInt(targetIndexOnBoard);
+			 */
+			//snake mouth is at toPosition, so movement happens from mouth position to tail
+			boardDimensions[toCor] = snake;
 			
 		}//end 
 		
@@ -71,10 +74,14 @@ public class BoardConcrete implements Board{
 			
 			int fromCor = ladder.getFromCorr();
 			int toCor = ladder.getToCorr();
-			String targetIndexOnBoard = Integer.toString(fromCor) + Integer.toString(toCor) ;
-			int targetIndex = Integer.parseInt(targetIndexOnBoard);
+			/*
+			 * String targetIndexOnBoard = Integer.toString(fromCor) +
+			 * Integer.toString(toCor) ; int targetIndex =
+			 * Integer.parseInt(targetIndexOnBoard);
+			 */
 			
-			boardDimensions[targetIndex] = ladder;
+			//ladder position move is from front end to tail end
+			boardDimensions[toCor] = ladder;
 		}
 		
 	}//end method nstantiateAllLadders
