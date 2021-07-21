@@ -14,14 +14,21 @@ public class BoardConcrete implements Board{
 	
 	@Override
 	public void createBoard() {
-		instantiateAllSnakes();
-		instantiateAllLadders();
+		
+		try {
+			instantiateAllSnakes();
+			instantiateAllLadders();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
 	 * Instantiates all snakes on the board
 	 */
-	private void instantiateAllSnakes(){
+	private void instantiateAllSnakes() throws Exception{
 		Position snake1 = new Position(10,5, "SNAKE");
 		Position snake2 = new Position(27,10, "SNAKE");
 		Position snake3 = new Position(40, 20,"SNAKE");
@@ -55,7 +62,7 @@ public class BoardConcrete implements Board{
 	/**
 	 * Instantiates all Ladders on the board
 	 */
-	private void instantiateAllLadders(){
+	private void instantiateAllLadders() throws Exception{
 		Position ladder1 = new Position(8, 28, "LADDER");
 		Position ladder2 = new Position(18,38, "LADDER");
 		Position ladder3 = new Position(28, 45,"LADDER");
