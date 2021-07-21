@@ -20,4 +20,10 @@ public class Move  implements MoveInterface{
 		return false;
 	}
 
+	@Override
+	public Position playerNextMove(Position playerCurrentPosition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }//end Move
